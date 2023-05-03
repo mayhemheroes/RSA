@@ -1,0 +1,7 @@
+project: RSA
+target: oaep
+duration: 90
+
+cmds:
+    - cmd: /oaep
+

@@ -1,0 +1,7 @@
+project: RSA
+target: privkey
+duration: 90
+
+cmds:
+    - cmd: /privkey
+
