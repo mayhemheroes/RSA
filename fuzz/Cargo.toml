@@ -1,0 +1,40 @@
+[package]
+name = "RSA-fuzz"
+version = "0.1.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+rand = "0.8"
+rand_chacha = "0.3"
+sha2 = "0.10"
+
+[dependencies.rsa]
+path = "../"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "oaep"
+path = "fuzz_targets/oaep.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "pkcs_encrypt"
+path = "fuzz_targets/pkcs_encrypt.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "privkey"
+path = "fuzz_targets/privkey.rs"
+test = false
+doc = false
